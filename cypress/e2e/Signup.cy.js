@@ -18,13 +18,16 @@ describe("Sign Up", () => {
 
     it("Validate sign up with valid credentials", () => {
 
-        signup.setFirstName("Sunita");
-        signup.setLastName("Baram");
-        signup.setEmail("baramsunita82@gmail.com");
-        signup.setPhoneNumber("9818196395");
-        signup.setPassword("Sunita123@");
-        signup.setConfirmPassword("Sunita123@");
-        signup.clickNextBtn();
+        cy.fixture("UserDetails").then((data) => {
+
+            signup.setFirstName(data.firstName);
+            signup.setLastName(data.lastName);
+            signup.setEmail(data.email);
+            signup.setPhoneNumber(data.phoneNumber);
+            signup.setPassword(data.password);
+            signup.setConfirmPassword(data.confirmPassword);
+            signup.clickNextBtn();
+        })    
 
     })
 
