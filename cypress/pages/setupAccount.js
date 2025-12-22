@@ -7,6 +7,7 @@ class SetupAccount{
     password = 'input[name = "password"]';
     confirmPassword = 'input[name = "confirmPassword"]';
     nextBtn = 'button[type = "submit"]'
+    roleStatus = 'li[role = "status"]'
 
 
     setFirstName(firstName){
@@ -37,6 +38,11 @@ class SetupAccount{
         cy.get(this.nextBtn).click();
     }
 
+    verifyStatus(){
+        cy.get(this.roleStatus).should("have.text", "Your account has been created successfully");
+        cy.url().should("eq", "https://authorized-partner.vercel.app/register?step=details");
+    }
+
 }
 
-export default new SetupAccount();
+export default SetupAccount;
