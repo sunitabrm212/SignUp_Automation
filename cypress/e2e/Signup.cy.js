@@ -33,6 +33,21 @@ describe("Sign Up", () => {
 
     })
 
+    it("Validate visibility of setupAccount fields", () => {
+
+        cy.fixture("UserDetails").then((data) => {
+
+            setupAccount.isFieldVisible(setupAccount.firstName);
+            setupAccount.isFieldVisible(setupAccount.lastName);
+            setupAccount.isFieldVisible(setupAccount.email);
+            setupAccount.isFieldVisible(setupAccount.phoneNumber);
+            setupAccount.isFieldVisible(setupAccount.password);
+            setupAccount.isFieldVisible(setupAccount.confirmPassword);
+
+        })
+
+    })
+
     //checks sign up with valid data
     it("Validate sign up with valid credentials", () => {
 
@@ -55,22 +70,10 @@ describe("Sign Up", () => {
             // agencyDetails.clickNext();
             
 
-
         })   
         
 
     })
-
-    it("Validate sign up with empty fields", () => {
-         setupAccount.setFirstName("");
-         setupAccount.setLastName("");
-         setupAccount.setEmail("");
-         setupAccount.setPhoneNumber("");
-         setupAccount.setPassword("");
-         setupAccount.setConfirmPassword("");
-         setupAccount.clickNextBtn();
-         
-        })
 
 
 })

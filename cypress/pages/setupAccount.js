@@ -6,9 +6,8 @@ class SetupAccount{
     phoneNumber = 'input[name = "phoneNumber"]';
     password = 'input[name = "password"]';
     confirmPassword = 'input[name = "confirmPassword"]';
-    nextBtn = 'button[type = "submit"]'
-    roleStatus = 'li[role = "status"]'
-
+    nextBtn = 'button[type = "submit"]';
+    roleStatus = 'li[role = "status"]';
 
     setFirstName(firstName){
         cy.get(this.firstName).type(firstName);
@@ -42,6 +41,11 @@ class SetupAccount{
         cy.get(this.roleStatus).should("have.text", "Your account has been created successfully");
         cy.url().should("eq", "https://authorized-partner.vercel.app/register?step=details");
     }
+
+    isFieldVisible(field){
+        cy.get(field).should("be.visible");
+    }
+
 
 }
 
