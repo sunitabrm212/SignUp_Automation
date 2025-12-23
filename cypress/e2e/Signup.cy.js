@@ -48,11 +48,23 @@ describe("Sign Up", () => {
 
     })
 
+    //checking for validation message when fields are left empty
+    it("Validate sign up with leaving all the fields empty", () => {
+
+        setupAccount.clickNextBtn();
+        setupAccount.firstNameErrorVerify();
+        setupAccount.lastNameErrorVerify();
+        setupAccount.emailErrorVerify();
+        setupAccount.passwordErrorVerify();
+
+    })
+
     //checks sign up with valid data
     it("Validate sign up with valid credentials", () => {
 
         cy.fixture("UserDetails").then((data) => {
 
+            //filling setupAccount details 
             setupAccount.setFirstName(data.firstName);
             setupAccount.setLastName(data.lastName);
             setupAccount.setEmail(data.email);
@@ -60,8 +72,9 @@ describe("Sign Up", () => {
             setupAccount.setPassword(data.password);
             setupAccount.setConfirmPassword(data.confirmPassword);
             setupAccount.clickNextBtn();
-            setupAccount.verifyStatus();
+            setupAccount.verifyHeading();
 
+            //filling form for agencyDetail page
             // agencyDetails.setName("OrangeHRM");
             // agencyDetails.setRole("QA");
             // agencyDetails.setAgencyEmail("orangehrm@gmail.com");
