@@ -15,7 +15,7 @@ Prerequisites
 Steps to Execute
 -----------------
 
-1. clone repository -> git clone <repo>
+1. clone repository -> git clone https://github.com/sunitabrm212/SignUp_Automation.git
                     -> cd <project-folder>
 
 2. Run Cypress in interactive mode
