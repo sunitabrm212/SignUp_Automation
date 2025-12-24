@@ -1,6 +1,6 @@
 class ProfessionalExperience{
 
-    yearsOfExperience = "button[role = 'combobox']";
+    yearsOfExperience = "button#«r81»-form-item";
     noOfStudentsRecruitedAnnually = 'input[name = "number_of_students_recruited_annually"]';
     focusArea = 'input[name = "focus_area"]';
     successMetrics ='input[name = "success_metrics"]';
