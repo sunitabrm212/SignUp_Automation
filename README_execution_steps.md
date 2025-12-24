@@ -38,6 +38,8 @@ Test Data
 
 Fixture include first name, last name, email, phone number, password and confirm password
 
+
+
 Automation beyond the signup flow requires email OTP verification, which has not been implemented as part of this task.
 As I am not currently familiar with automating OTP retrieval from email, testing could not be continued further.
 Page Object files for Agency Details and Professional Experience have been included to demonstrate understanding of framework design and future test expansion.
